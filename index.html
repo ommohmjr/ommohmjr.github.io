@@ -62,8 +62,7 @@
             let selectedDeviceId;
             const codeReader = new ZXing.BrowserMultiFormatReader()
             console.log('ZXing code reader initialized')
-            codeReader.listVideoInputDevices()
-                .then((videoInputDevices) => {
+            codeReader.listVideoInputDevices().then((videoInputDevices) => {
                     const sourceSelect = document.getElementById('sourceSelect')
                     selectedDeviceId = videoInputDevices[0].deviceId
                     if (videoInputDevices.length >= 1) {
@@ -87,6 +86,9 @@
                             if (result) {
                                 console.log(result)
                                 document.getElementById('result').textContent = result.text
+                                codeReader.reset();
+                                var audio = new Audio('resource/barcode-read.mp3');
+                                audio.play();
                             }
                             if (err && !(err instanceof ZXing.NotFoundException)) {
                                 console.error(err)
