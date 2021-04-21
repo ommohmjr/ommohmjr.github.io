@@ -56,8 +56,25 @@
                         sourceSelect.selectedIndex = (videoInputDevices.length - 1);
                         sourceSelect.onchange = () => {
                             selectedDeviceId = sourceSelect.value;
-                            //startScanning();
-                            //codeReader.reset();
+                            codeReader.reset();
+                            codeReader.decodeFromVideoDevice(selectedDeviceId, 'video', (result, err) => {
+                                if (result) {
+                                    console.log(result);
+                                    //document.getElementById('result').textContent = result.text;
+                                    document.getElementById('result').value = result.text;
+                                    codeReader.reset();
+                                    sourceSelectPanel.style.display = 'none';
+                                    var audio = new Audio('resource/barcode-read.mp3');
+                                    audio.play();
+
+                                }
+                                if (err && !(err instanceof ZXing.NotFoundException)) {
+                                    console.error(err)
+                                    document.getElementById('result').textContent = err
+                                }
+                            }).catch(function(err) {
+                                console.error(err)
+                            })
                         };
 
                         document.getElementById('sourceSelectPanel').style.display = 'block';
