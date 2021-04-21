@@ -30,9 +30,10 @@ document.getElementById('startButton').addEventListener('click', function(event)
                         //document.getElementById('result').textContent = result.text;
                         document.getElementById('result').value = result.text;
                         codeReader.reset();
-                        document.getElementById("video").style.display = 'none';
+                        sourceSelectPanel.style.display = 'none';
                         var audio = new Audio('resource/barcode-read.mp3');
                         audio.play();
+
                     }
                     if (err && !(err instanceof ZXing.NotFoundException)) {
                         console.error(err)
@@ -44,6 +45,7 @@ document.getElementById('startButton').addEventListener('click', function(event)
                 document.getElementById('resetButton').addEventListener('click', () => {
                     codeReader.reset()
                     document.getElementById('result').textContent = '';
+                    sourceSelectPanel.style.display = 'none';
                     console.log('Reset.')
                 })
             })
