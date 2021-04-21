@@ -8,7 +8,7 @@ function showScanningDialog() {
             function(videoInputDevices) {
                 clearCameraList();
                 var sourceSelect = document.getElementById('sourceSelect');
-                selectedDeviceId = videoInputDevices[0].deviceId // assume select back camera device
+                selectedDeviceId = videoInputDevices[videoInputDevices.length - 1].deviceId // assume select back camera device
                 if (videoInputDevices.length >= 1) {
                     videoInputDevices.forEach((element) => {
                         const sourceOption = document.createElement('option')
