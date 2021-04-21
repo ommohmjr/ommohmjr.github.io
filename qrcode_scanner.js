@@ -1,4 +1,4 @@
-const codeReader = new ZXing.BrowserMultiFormatReader();
+var codeReader = new ZXing.BrowserMultiFormatReader();
 
 function showScanningDialog() {
 
