@@ -1,4 +1,5 @@
-document.getElementById('startButton').addEventListener('click', function(event) {
+function startScanning() {
+
     let selectedDeviceId;
     const codeReader = new ZXing.BrowserMultiFormatReader()
     console.log('ZXing code reader initialized')
@@ -53,7 +54,8 @@ document.getElementById('startButton').addEventListener('click', function(event)
             function(err) {
                 console.error(err)
             });
-});
+
+}
 
 function clearCameraList() {
     var select = document.getElementById("sourceSelect");

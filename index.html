@@ -18,7 +18,7 @@
         <div>
             <label>Result:</label>
             <input type="text" id="result"></input>
-            <button id="startButton">Scan</button>
+            <button id="startButton" onclick="startScanning();">Scan</button>
         </div>
 
         <div id="sourceSelectPanel" style="display:none">
@@ -33,7 +33,7 @@
     </main>
 
     <script type="text/javascript" src="@zxing/library/umd/index.js"></script>
-    <script type="text/javascript" src="index.js"></script>
+    <script type="text/javascript" src="qrcode_scanner.js"></script>
 
 </body>
 
