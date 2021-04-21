@@ -49,7 +49,7 @@ function startScanning() {
     document.getElementById('sourceSelectPanel').style.display = 'block';
     document.getElementById("video").style.display = 'block';
     selectedDeviceId = sourceSelect.value;
-    console.log(selectedDeviceId);
+    document.getElementById('result').value = selectedDeviceId;
     codeReader.decodeFromVideoDevice(selectedDeviceId, 'video', (result, err) => {
         if (result) {
             console.log(result);
