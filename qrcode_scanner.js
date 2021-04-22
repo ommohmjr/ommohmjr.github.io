@@ -1,14 +1,13 @@
 const codeReader = new ZXing.BrowserMultiFormatReader();
 
 function showScanningDialog() {
-
     let selectedDeviceId;
     console.log('ZXing code reader initialized')
-    codeReader.listVideoInputDevices().then(
+    codeReader.listVideoInputDevices().then( // codereader work in promise exec function in .then and exec .catch on error
         function(videoInputDevices) {
             clearCameraList();
             var sourceSelect = document.getElementById('sourceSelect');
-            selectedDeviceId = videoInputDevices[videoInputDevices.length - 1].deviceId // assume select back camera device
+            selectedDeviceId = videoInputDevices[videoInputDevices.length - 1].deviceId // assume select back camera device first
             if (videoInputDevices.length >= 1) {
                 videoInputDevices.forEach((element) => {
                     const sourceOption = document.createElement('option')
@@ -17,6 +16,7 @@ function showScanningDialog() {
                     sourceSelect.appendChild(sourceOption)
                 })
                 sourceSelect.selectedIndex = (videoInputDevices.length - 1);
+
                 sourceSelect.onchange = () => {
                     selectedDeviceId = sourceSelect.value;
                     codeReader.reset();
@@ -49,9 +49,8 @@ function showScanningDialog() {
 }
 
 function scan(result, err) {
-    if (result) {
+    if (result) { // on scan complete
         console.log(result);
-        //document.getElementById('result').textContent = result.text;
         document.getElementById('result').value = result.text;
         codeReader.reset();
         sourceSelectPanel.style.display = 'none';
