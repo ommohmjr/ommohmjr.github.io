@@ -1,6 +1,0 @@
-{
-  "dependencies": {
-    "@zxing/library": "^0.18.5",
-    "browserify": "^17.0.0"
-  }
-}

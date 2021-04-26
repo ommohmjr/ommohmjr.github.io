@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="author" content="ZXing for JS">
-    <script src="index.js"></script>
+
     <title>ZXing TypeScript | Decoding from camera stream</title>
 
 
@@ -14,12 +14,6 @@
 <body>
 
     <main class="wrapper" style="padding-top:2em">
-
-        <div>
-            <label>Result:</label>
-            <input type="text" id="result"></input>
-            <button id="startButton" onclick="window.open('qr-scanner.html')">Scan</button>
-        </div>
 
         <div id="sourceSelectPanel" style="display:none">
             <button id="resetButton">Reset</button>
@@ -30,6 +24,8 @@
 
     </main>
 
+    <script type="text/javascript" src="@zxing/library/umd/index.js"></script>
+    <script type="text/javascript" src="qrcode_scanner.js">
     </script>
 
 </body>

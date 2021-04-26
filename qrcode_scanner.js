@@ -1,5 +1,11 @@
 const codeReader = new ZXing.BrowserMultiFormatReader();
 
+window.addEventListener('load', () => {
+
+    showScanningDialog();
+
+});
+
 function showScanningDialog() {
     let selectedDeviceId;
     console.log('ZXing code reader initialized')
@@ -51,16 +57,17 @@ function showScanningDialog() {
 function scan(result, err) {
     if (result) { // on scan complete
         console.log(result);
-        document.getElementById('result').value = result.text;
+        opener.doScanQr(result.text);
         codeReader.reset();
         sourceSelectPanel.style.display = 'none';
         var audio = new Audio('resource/barcode-read.mp3');
         audio.play();
+        window.close();
 
     }
     if (err && !(err instanceof ZXing.NotFoundException)) {
-        console.error(err)
-        document.getElementById('result').textContent = err
+        //console.error(err)
+        //document.getElementById('result').textContent = err
     }
 }
 
