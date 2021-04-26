@@ -12,17 +12,14 @@
 </head>
 
 <body>
-
-    <main class="wrapper" style="padding-top:2em">
-
-        <div id="sourceSelectPanel" style="display:none">
-            <button id="resetButton">Reset</button>
-            <video id="video" width="300" height="200" style="border: 1px solid gray; display: none;"></video>
-            <select id="sourceSelect" style="max-width:400px">
-            </select>
+    <div id="sourceSelectPanel" style="display:none; text-align: center;margin-top: 20px;">
+        <video id="video" style="border: 1px solid gray; display: none; margin-left: auto; margin-right: auto;"></video>
+        <div style="display:inline;">
+            Camera Select:
+            <select id="sourceSelect" style="max-width:400px;margin-top: 10px;"></select>
         </div>
-
-    </main>
+        <button id="resetButton">Close</button>
+    </div>
 
     <script type="text/javascript" src="@zxing/library/umd/index.js"></script>
     <script type="text/javascript" src="qrcode_scanner.js">

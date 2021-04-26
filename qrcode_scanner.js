@@ -57,11 +57,11 @@ function showScanningDialog() {
 function scan(result, err) {
     if (result) { // on scan complete
         console.log(result);
-        opener.doScanQr(result.text);
         codeReader.reset();
         sourceSelectPanel.style.display = 'none';
         var audio = new Audio('resource/barcode-read.mp3');
         audio.play();
+        opener.doScanQr(result.text);
         window.close();
 
     }
