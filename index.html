@@ -1,60 +1,36 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Project1</title>
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
-    <link rel="stylesheet" type="text/css" href="css/bubbles.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="author" content="ZXing for JS">
+    <script src="index.js"></script>
+    <title>ZXing TypeScript | Decoding from camera stream</title>
+
+
 </head>
 
-<body onload="startProcess();">
-    <div id="scene">
-        <div class="item" time="2000">
-            <div class="centerContainer">
-                <img src="img/INVENTAR_STUDIO.png" width="400px" />
-            </div>
-        </div>
-        <div class="item" style="background-color: #12141f;">
-            <div class="logoZoomIn sub">
-                <div class="centerContainer" style="top: 45%;">
-                    <img src="img/Logo.png" width="500px" />
-                    <br/>
-                </div>
-            </div>
-            <video autoplay style='position: fixed;right: 0;bottom: 0;min-width: 100%;min-height: 100%;' id="videos" preload="auto">
-                <source id="videosource" type="video/mp4" width="980px"height="720px">
-            </video>
-            <div class="hud">
-                <h2 id="pgB-NPC" class="txt">Preparing...</h2>
-                <div id="progressBar">
-                    <div id="pgB-PC" style="width: 50%"></div>
-                </div>
-                <h2 id="pgB-NPCNum" class="txt">0/1</h2>
-            </div>
-        </div>
-    </div>
-    <div id="settingTxt" style="display: none;">
-        <div class="motionTansit mToRight">
-            <div class="sub">
-                <p id="loadingTxt">The game will start soon...</p>
-            </div>
-        </div>
-    </div>
+<body>
 
-    <script>
-        const rndInt = 1;
-        let source = document.getElementById("videosource");
+    <main class="wrapper" style="padding-top:2em">
 
-        document.getElementById("videosource").src = "videos/" + rndInt + ".mp4";
-        console.log(document.getElementById("videosource").src)
-        var video = document.getElementById("videos");
-        video.volume = 0.2;
-        video.autoplay = true;
-        video.load();
+        <div>
+            <label>Result:</label>
+            <input type="text" id="result"></input>
+            <button id="startButton" onclick="window.open('qr-scanner.html')">Scan</button>
+        </div>
+
+        <div id="sourceSelectPanel" style="display:none">
+            <button id="resetButton">Reset</button>
+            <video id="video" width="300" height="200" style="border: 1px solid gray; display: none;"></video>
+            <select id="sourceSelect" style="max-width:400px">
+            </select>
+        </div>
+    </main>
+
     </script>
 
-    <script type="text/javascript" src="js/index.js"></script>
 </body>
 
 </html>
