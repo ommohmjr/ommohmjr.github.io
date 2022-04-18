@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+   
+    <script type="text/javascript" src="filter.js"></script>
+    <script>
+        // Note: the Web Audio spec is moving from constants to strings.
+        // filter.type = 'lowpass';
+        var sound = new Howl({
+        src: ['http://6f3907eb620b.sn.mynetname.net:3000/WYUmW7E1YI8.mp3'],
+        preload: true});
+        
+        sound.pannerAttr({
+        distanceModel: "linear",
+        maxDistance: 17,
+        panningModel: "equalpower", // <- sounds are crispy again!!!
+        refDistance: 1,
+        rolloffFactor: 1,
+        coneInnerAngle: 360,
+        coneOuterAngle: 360,
+        coneOuterGain: 0,
+        });
+        sound.play()
+        sound.volume = 0.1;
+        sound.addFilter({
+        filterType: 'lowpass',
+        frequency: 400,
+        Q: 0.5
+        });
+        
+        // it also provides calls for spatial/3d audio effects (most browsers)
+    </script>
+</head>
+<body>
+    Frequency:
+    <input type="range" min="0" max="1000" value="500" id="frequency-slider"><br/>
+    Vol:
+    <input type="range" min="0" max="1000" value="500" id="vol-slider">
+    <script>
+
+    document.getElementById('frequency-slider').oninput = (event) => {
+          const value = parseInt(event.currentTarget.value);
+          console.log('update freq ', value);
+          sound.frequency(value);
+        };
+        document.getElementById('vol-slider').oninput = (event) => {
+          const value = parseInt(event.currentTarget.value);
+          console.log('update freq ', value);
+          sound.volume(value/1000);
+        };
+    </script>
+</body>
+</html>
