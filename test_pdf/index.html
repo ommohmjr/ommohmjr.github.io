@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" />
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/pdfobject/2.2.8/pdfobject.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.14.305/pdf.min.js" integrity="sha512-dw+7hmxlGiOvY3mCnzrPT5yoUwN/MRjVgYV7HGXqsiXnZeqsw1H9n9lsnnPu4kL2nx2bnrjFcuWK+P3lshekwQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<title>Signature Pad</title>
+<style type="text/css">
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #f1f1f1;
+}
+.pdf {
+    width: 100%;
+
+}
+.container{
+    width: 100px;
+    height: 100px;
+    background-color: black;
+    position: absolute;
+    top:1050px;
+    left:500px;
+}
+
+</style>
+<link rel="shortcut icon" href="#{resource['pos/images/favicon/favicon.png']}" type="image/png" />
+</head>
+<body style="text-align: center;">
+    <canvas id="the-canvas" ></canvas>
+    <div class="container"></div>
+</body>
+
+<script type="text/javascript">
+    pdfjsLib.getDocument('/dbinstance_201029144107.pdf').promise.then(function(pdf) {
+  // Using promise to fetch the page
+  pdf.getPage(1).then(function(page) {
+    var viewport = page.getViewport({scale: 2});
+
+    //
+    // Prepare canvas using PDF page dimensions
+    //
+    var canvas = document.getElementById('the-canvas');
+    var context = canvas.getContext('2d');
+    canvas.height = viewport.height;
+    canvas.width = viewport.width;
+
+    //
+    // Render PDF page into canvas context
+    //
+    var renderContext = {
+      canvasContext: context,
+      viewport: viewport
+    };
+    page.render(renderContext);
+  });
+});
+</script>
+</html>
