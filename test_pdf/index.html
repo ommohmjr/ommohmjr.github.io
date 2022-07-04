@@ -35,7 +35,7 @@ body {
 </body>
 
 <script type="text/javascript">
-    pdfjsLib.getDocument('/dbinstance_201029144107.pdf').promise.then(function(pdf) {
+    pdfjsLib.getDocument('dbinstance_201029144107.pdf').promise.then(function(pdf) {
   // Using promise to fetch the page
   pdf.getPage(1).then(function(page) {
     var viewport = page.getViewport({scale: 2});
