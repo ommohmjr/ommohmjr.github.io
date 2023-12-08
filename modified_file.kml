@@ -1,8 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
-<kml xmlns="http://www.opengis.net/kml/2.2"><Document><Style id="poly-1001-normal">
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Document>
+    <Style id="poly-1001-normal">
       <LineStyle>
-        <color>ff9e9e9e</color>
-        <width>0</width>
+        <color>ff740009</color>
+        <width>2</width>
       </LineStyle>
       <PolyStyle>
         <color>809e9e9e</color>
@@ -12,8 +14,8 @@
     </Style>
     <Style id="poly-1001-highlight">
       <LineStyle>
-        <color>ff9e9e9e</color>
-        <width>1.5</width>
+        <color>ff740009</color>
+        <width>2</width>
       </LineStyle>
       <PolyStyle>
         <color>809e9e9e</color>
@@ -23,8 +25,8 @@
     </Style>
     <Style id="poly-1002-normal">
       <LineStyle>
-        <color>ff990099</color>
-        <width>0</width>
+        <color>ff740009</color>
+        <width>2</width>
       </LineStyle>
       <PolyStyle>
         <color>80990099</color>
@@ -34,8 +36,8 @@
     </Style>
     <Style id="poly-1002-highlight">
       <LineStyle>
-        <color>ff990099</color>
-        <width>1</width>
+        <color>ff740009</color>
+        <width>2</width>
       </LineStyle>
       <PolyStyle>
         <color>80990099</color>
@@ -45,8 +47,8 @@
     </Style>
     <Style id="poly-1003-normal">
       <LineStyle>
-        <color>ff009aff</color>
-        <width>0</width>
+        <color>ff740009</color>
+        <width>2</width>
       </LineStyle>
       <PolyStyle>
         <color>80009aff</color>
@@ -56,8 +58,8 @@
     </Style>
     <Style id="poly-1003-highlight">
       <LineStyle>
-        <color>ff009aff</color>
-        <width>1.5</width>
+        <color>ff740009</color>
+        <width>2</width>
       </LineStyle>
       <PolyStyle>
         <color>80009aff</color>
@@ -67,8 +69,8 @@
     </Style>
     <Style id="poly-1004-normal">
       <LineStyle>
-        <color>ff00ffff</color>
-        <width>0</width>
+        <color>ff740009</color>
+        <width>2</width>
       </LineStyle>
       <PolyStyle>
         <color>8000ffff</color>
@@ -78,8 +80,8 @@
     </Style>
     <Style id="poly-1004-highlight">
       <LineStyle>
-        <color>ff00ffff</color>
-        <width>1.5</width>
+        <color>ff740009</color>
+        <width>2</width>
       </LineStyle>
       <PolyStyle>
         <color>8000ffff</color>
@@ -89,8 +91,8 @@
     </Style>
     <Style id="poly-1005-normal">
       <LineStyle>
-        <color>ffffaa00</color>
-        <width>0</width>
+        <color>ff740009</color>
+        <width>2</width>
       </LineStyle>
       <PolyStyle>
         <color>80ffaa00</color>
@@ -100,8 +102,8 @@
     </Style>
     <Style id="poly-1005-highlight">
       <LineStyle>
-        <color>ffffaa00</color>
-        <width>1.5</width>
+        <color>ff740009</color>
+        <width>2</width>
       </LineStyle>
       <PolyStyle>
         <color>80ffaa00</color>
@@ -111,8 +113,8 @@
     </Style>
     <Style id="poly-1006-normal">
       <LineStyle>
-        <color>ffff0000</color>
-        <width>0</width>
+        <color>ff740009</color>
+        <width>2</width>
       </LineStyle>
       <PolyStyle>
         <color>80ff0000</color>
@@ -122,8 +124,8 @@
     </Style>
     <Style id="poly-1006-highlight">
       <LineStyle>
-        <color>ffff0000</color>
-        <width>1.5</width>
+        <color>ff740009</color>
+        <width>2</width>
       </LineStyle>
       <PolyStyle>
         <color>80ff0000</color>
@@ -133,8 +135,8 @@
     </Style>
     <Style id="poly-1007-normal">
       <LineStyle>
-        <color>ff00aa00</color>
-        <width>0</width>
+        <color>ff740009</color>
+        <width>2</width>
       </LineStyle>
       <PolyStyle>
         <color>8000aa00</color>
@@ -144,8 +146,8 @@
     </Style>
     <Style id="poly-1007-highlight">
       <LineStyle>
-        <color>ff00aa00</color>
-        <width>1.5</width>
+        <color>ff740009</color>
+        <width>2</width>
       </LineStyle>
       <PolyStyle>
         <color>8000aa00</color>
@@ -155,8 +157,8 @@
     </Style>
     <Style id="poly-1008-normal">
       <LineStyle>
-        <color>ff0000ff</color>
-        <width>0</width>
+        <color>ff740009</color>
+        <width>2</width>
       </LineStyle>
       <PolyStyle>
         <color>800000ff</color>
@@ -166,8 +168,8 @@
     </Style>
     <Style id="poly-1008-highlight">
       <LineStyle>
-        <color>ff0000ff</color>
-        <width>1.5</width>
+        <color>ff740009</color>
+        <width>2</width>
       </LineStyle>
       <PolyStyle>
         <color>800000ff</color>
